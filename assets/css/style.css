@@ -15,10 +15,6 @@ body {
   color: var(--textColor);
   letter-spacing: 0.2em;
   font-size: 16px;
-  max-width: 850px;
-  margin: auto;
-  background: url(../images/fvBg.png) no-repeat center center/cover;
-  padding: 16px 0 200px;
 }
 
 img {
@@ -33,8 +29,14 @@ img {
   color: var(--yellow);
 }
 
+.fv-wrap {
+  background: url(../images/fvBg.png) no-repeat center center/cover;
+}
+
 .fv {
+  background: url(../images/fvBg.png) no-repeat center center/cover;
   padding: 16px 0 200px;
+  max-width: 850px;
   margin: auto;
   height: 550px;
 }
@@ -156,6 +158,14 @@ img {
   background-color: var(--pink);
   padding: 3px 10px 10px;
   display: inline-block;
+}
+
+section.feature {
+  background: url(../images/feature-pcBg.png) no-repeat center center/cover;
+}
+section.feature .bgInner {
+  max-width: 760px;
+  margin: 0 auto;
 }
 
 @media (max-width: 768px) {
