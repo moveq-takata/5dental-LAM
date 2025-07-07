@@ -1,0 +1,170 @@
+:root{
+    --textColor :#414245;
+    --pink :#F33E5C;
+    --yellow :#FFFAD7;
+    --white :#FFFFFF;
+}
+
+html{
+    scroll-behavior: smooth;
+    scroll-padding-top: 150px;
+}
+body{
+    font-family: "Zen Old Mincho", serif;
+    color: var(--textColor);
+    letter-spacing: 0.2em;
+    font-size: 16px;
+}
+
+img{
+    max-width: 100%;
+}
+.sp-only{
+    display: none;
+
+}
+.textYellow{
+    color: var(--yellow);
+}
+
+//FV
+.fv{
+    background: url(../images/fvBg.png) no-repeat center center / cover;
+    padding: 16px 0 200px;
+
+    .content-wrap{
+        max-width: 800px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+
+        &::before{
+            content: '';
+            background: url(../images/fv-bgImg.png) no-repeat center center / contain;
+            width: 400px;
+            height: 400px;
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            z-index: -1;
+        }
+    }
+
+    .catchArea{
+        position: absolute;
+        top: 20px;
+        left: 100px;
+
+        .dental-name{
+            color: var(--pink);
+            margin-bottom: 15px;
+            
+            p{
+                font-size: 40px;
+                margin-bottom: 5px;
+            }
+            span{
+                letter-spacing: normal;
+                font-weight: 600;
+            }
+            
+        }
+    
+        .catchCopy{
+            background-color: var(--textColor);
+            color: var(--white);
+            font-size: 22px;
+            padding: 5px 10px 8px;
+            display: inline-block;
+            margin-bottom: 8px; 
+    
+            p{
+                position: relative;
+                padding-left: 25px;
+    
+                &::before{
+                    content: '';
+                    background: url(../images/checkBox.png) no-repeat center center / contain;
+                    width: 18px;
+                    height: 18px;
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    margin: auto;
+                }
+            }
+        }
+    }
+
+    .siteLogo{
+        position: absolute;
+        top: 0;
+        left: 434px;
+        width: 100px;
+        height: 115px;
+        
+    }
+
+    .mainVisual{
+        width: 680px;
+        height: 550px;
+        margin-left: auto;
+    }   
+
+    .pageTtlArea{
+        position: absolute;
+        bottom: -125px;
+        left: 120px;
+        
+        .inner{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1{
+            font-size: 48px;
+            font-weight: bold;
+            text-align: center;
+            color: var(--pink);
+            letter-spacing: 0;
+            position: relative;
+            margin-bottom: 15px;
+
+            &::before{
+                content: '';
+                background: url(../images/painless.svg) no-repeat center center / contain;
+                width: 123px;
+                height: 51px;
+                position: absolute;
+                bottom: -11px;
+                right: -28px;
+            }
+        }
+
+        p{
+            font-size: 36px;
+            color: var(--yellow);
+            background-color: var(--pink);
+            padding: 3px 10px 10px;
+            display: inline-block;
+        }
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    .pc-only{
+        display: none;
+    }
+    .sp-only{
+        display: block;
+    }
+
+    .sp-content-wrap{
+        width: 100%;
+        overflow-x: hidden;
+    }
+}
