@@ -15,6 +15,10 @@ body {
   color: var(--textColor);
   letter-spacing: 0.2em;
   font-size: 16px;
+  max-width: 850px;
+  margin: auto;
+  background: url(../images/fvBg.png) no-repeat center center/cover;
+  padding: 16px 0 200px;
 }
 
 img {
@@ -30,24 +34,30 @@ img {
 }
 
 .fv {
-  background: url(../images/fvBg.png) no-repeat center center/cover;
   padding: 16px 0 200px;
+  margin: auto;
+  height: 550px;
 }
 .fv .content-wrap {
-  max-width: 800px;
   margin: 0 auto;
   position: relative;
   z-index: 1;
+  height: 550px;
 }
 .fv .content-wrap::before {
   content: "";
   background: url(../images/fv-bgImg.png) no-repeat center center/contain;
-  width: 400px;
   height: 400px;
   position: absolute;
-  bottom: -50px;
-  left: 0;
   z-index: -1;
+  bottom: -13%;
+  left: 0%;
+  z-index: -1;
+  overflow: hidden;
+  width: clamp(360px, 12vw, 400px);
+  right: 0;
+  -o-object-position: right center;
+     object-position: right center;
 }
 .fv .catchArea {
   position: absolute;
@@ -97,9 +107,20 @@ img {
   height: 115px;
 }
 .fv .mainVisual {
+  position: relative;
+  z-index: -1;
+}
+.fv .mainVisual img {
+  position: absolute;
+  -o-object-position: right center;
+     object-position: right center;
+  left: clamp(2%, 16vw, -76%);
   width: 680px;
   height: 550px;
-  margin-left: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 50px;
+     object-position: 50px;
 }
 .fv .pageTtlArea {
   position: absolute;

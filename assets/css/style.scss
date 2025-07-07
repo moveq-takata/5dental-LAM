@@ -14,6 +14,11 @@ body{
     color: var(--textColor);
     letter-spacing: 0.2em;
     font-size: 16px;
+    //　bodyタグ直下に新しい要素を作成して入れてください！
+    max-width: 850px;
+    margin: auto;
+    background: url(../images/fvBg.png) no-repeat center center / cover;
+    padding: 16px 0 200px;
 }
 
 img{
@@ -29,24 +34,35 @@ img{
 
 //FV
 .fv{
-    background: url(../images/fvBg.png) no-repeat center center / cover;
+    // background: url(../images/fvBg.png) no-repeat center center / cover;
     padding: 16px 0 200px;
+    margin: auto;
+    height: 550px;
 
     .content-wrap{
-        max-width: 800px;
+        // max-width: 800px;
         margin: 0 auto;
         position: relative;
         z-index: 1;
+        height: 550px;
+        
 
         &::before{
             content: '';
             background: url(../images/fv-bgImg.png) no-repeat center center / contain;
-            width: 400px;
+            // width: 400px;
             height: 400px;
             position: absolute;
-            bottom: -50px;
-            left: 0;
+            // bottom: -50px;
+            // left: 0;
             z-index: -1;
+            bottom: -13%;
+            left: 0%;
+            z-index: -1;
+            overflow: hidden;
+            width: clamp(360px, 12vw, 400px);
+            right: 0;
+            object-position: right center;
         }
     }
 
@@ -107,9 +123,21 @@ img{
     }
 
     .mainVisual{
-        width: 680px;
-        height: 550px;
-        margin-left: auto;
+        // width: 680px;
+        // height: 550px;
+        // margin-left: auto;
+        position: relative;
+        z-index: -1;
+
+        img {
+            position: absolute;
+            object-position: right center;
+            left: clamp(2%, 16vw, -76%);
+            width: 680px;
+            height: 550px;
+            object-fit: cover;
+            object-position: 50px;
+        }
     }   
 
     .pageTtlArea{
