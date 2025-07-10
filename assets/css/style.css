@@ -1026,10 +1026,66 @@ section.about .content01-wrap .pointBlock .detail .inner {
   padding: 17px 30px;
 }
 section.about .content02-wrap {
-  background: url(../images/bg-license.png) no-repeat;
+  background-color: var(--white);
   background-size: 100% 562px;
   background-position: top center;
   padding: 64px 0;
+  position: relative;
+  z-index: 2;
+}
+section.about .content02-wrap::before {
+  content: "";
+  background: url(../images/bg-license.png) no-repeat center center/cover;
+  width: 100%;
+  height: 562px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+section.about .content02-wrap .ttl-wrap {
+  position: relative;
+}
+section.about .content02-wrap .ttl-wrap::before {
+  content: "";
+  background: url(../images/02.svg) no-repeat center center/contain;
+  width: 158px;
+  height: 110px;
+  top: -27px;
+  left: -85px;
+  position: absolute;
+}
+section.about .content02-wrap h3 {
+  color: var(--pink);
+}
+section.about .content02-wrap h3 .bg-pinkTxt {
+  background-color: var(--pink);
+}
+section.about .content02-wrap .subTtl {
+  color: var(--pink);
+  position: relative;
+}
+section.about .content02-wrap .subTtl span::before {
+  content: "";
+  background: url(../images/star.png) no-repeat center center/contain;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+}
+section.about .content02-wrap .subTtl span::after {
+  content: "";
+  background: url(../images/star.png) no-repeat center center/contain;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
 }
 section.about .content02-wrap .artistBlock {
   max-width: 760px;
@@ -1042,6 +1098,59 @@ section.about .content02-wrap .artistBlock {
 section.about .content02-wrap .artistBlock .container {
   max-width: 580px;
   margin-left: auto;
+}
+section.about .content02-wrap .artistBlock .mainTxt div:first-child {
+  margin-bottom: 10px;
+}
+section.about .content02-wrap .artistBlock .mainTxt p {
+  display: inline-block;
+  font-size: 20px;
+  color: var(--white);
+  background-color: var(--textColor);
+  padding: 5px 10px;
+  letter-spacing: normal;
+}
+section.about .content02-wrap .artistBlock .mainTxt p span {
+  font-size: 30px;
+}
+section.about .content02-wrap .artistBlock .txtBase {
+  max-width: 352px;
+  margin: 30px 0;
+}
+section.about .content02-wrap .artistBlock .txtBase p {
+  margin-bottom: 1em;
+  line-height: 1.8;
+  letter-spacing: normal;
+}
+section.about .content02-wrap .artistBlock .pointBlock .pointItem {
+  padding: 16px 24px;
+  font-size: 20px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: linear-gradient(to right, #FFF5F8 0%, rgba(255, 245, 248, 0.7254901961) 70%, transparent 100%);
+  margin-bottom: 16px;
+  letter-spacing: normal;
+  font-weight: 600;
+}
+section.about .content02-wrap .artistBlock .pointBlock .pointItem::before {
+  content: "";
+  background: url(../images/point01.svg) no-repeat center center/contain;
+  width: 57px;
+  height: 27px;
+  position: absolute;
+  top: -10px;
+  left: -8px;
+}
+section.about .content02-wrap .artistBlock .pointBlock .pointItem:nth-of-type(1)::before {
+  background: url(../images/point01.svg) no-repeat center center/contain;
+}
+section.about .content02-wrap .artistBlock .pointBlock .pointItem:nth-of-type(2)::before {
+  background: url(../images/point2.svg) no-repeat center center/contain;
+}
+section.about .content02-wrap .artistBlock .pointBlock .pointItem:nth-of-type(3)::before {
+  background: url(../images/point3.svg) no-repeat center center/contain;
 }
 
 .compareTable-wrap {
@@ -1189,6 +1298,7 @@ section.about .content02-wrap .artistBlock .container {
 
 section.design {
   padding: 64px 0;
+  background: url(../images/design-bg.png) no-repeat bottom center/cover;
 }
 section.design .content-wrap {
   max-width: 418px;
@@ -1258,6 +1368,7 @@ section.design .designBlock .designItem .designName {
 section.design .designBlock .designItem .detail-area {
   margin-top: 30px;
   padding: 0 20px 0 16px;
+  line-height: 1.5;
 }
 section.design .designBlock .designItem .detail-area table {
   border: 2px solid var(--textColor);
@@ -1269,6 +1380,7 @@ section.design .designBlock .designItem .detail-area table tr:not(:last-child) {
 }
 section.design .designBlock .designItem .detail-area table th, section.design .designBlock .designItem .detail-area table td {
   padding: 10px;
+  font-weight: 600;
 }
 section.design .designBlock .designItem .detail-area table th {
   width: 98px;
@@ -1277,6 +1389,337 @@ section.design .designBlock .designItem .detail-area table th {
 }
 section.design .designBlock .designItem .detail-area .detailImg {
   margin-top: 24px;
+}
+
+section.downtime {
+  background-color: #D5D9E4;
+  padding: 64px 0;
+}
+section.downtime .content-wrap {
+  max-width: 352px;
+  padding: 0 24px;
+  margin: 0 auto;
+}
+section.downtime h2 {
+  font-size: 24px;
+  font-weight: 600;
+  position: relative;
+  margin-bottom: 24px;
+}
+section.downtime h2::before {
+  content: "";
+  background: url(../images/star_black.png) no-repeat center center/contain;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 0;
+  left: 30px;
+  bottom: 0;
+  margin: auto;
+}
+section.downtime h2::after {
+  content: "";
+  background: url(../images/star_black.png) no-repeat center center/contain;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 0;
+  right: 30px;
+  bottom: 0;
+  margin: auto;
+}
+section.downtime .downtimeBlock {
+  background-color: var(--white);
+  padding: 24px;
+}
+section.downtime .downtimeBlock .headingTxt {
+  font-size: 15px;
+  text-align: center;
+  line-height: 1.5;
+  letter-spacing: 1.5px;
+  margin-bottom: 20px;
+}
+section.downtime .downtimeBlock .headingTxt span {
+  color: var(--lightPink);
+}
+section.downtime .downtimeBlock .downtimeItem {
+  background-color: #EFEFF3;
+  padding: 16px;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 8px;
+}
+section.downtime .downtimeBlock .downtimeItem .numArea {
+  width: 30px;
+}
+section.downtime .downtimeBlock .downtimeItem .numArea p {
+  letter-spacing: 1px;
+  text-align: center;
+}
+section.downtime .downtimeBlock .downtimeItem .numArea p:first-child {
+  font-size: 8px;
+  margin-bottom: 3px;
+}
+section.downtime .downtimeBlock .downtimeItem .numArea .num {
+  font-size: 13px;
+  color: var(--white);
+  background-color: var(--textColor);
+  align-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+section.downtime .downtimeBlock .downtimeItem .txtArea {
+  width: calc(100% - 46px);
+  letter-spacing: normal;
+}
+section.downtime .downtimeBlock .downtimeItem .txtArea .ttl {
+  font-size: 15px;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: var(--lightPink);
+}
+section.downtime .downtimeBlock .downtimeItem .txtArea .detail {
+  font-size: 14px;
+}
+
+section.steps {
+  padding: 64px 0;
+  background-color: var(--white);
+}
+section.steps h2 {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+section.steps h2 span {
+  font-size: 38px;
+}
+section.steps .sliderItem-wrap {
+  display: flex;
+  gap: 16px;
+  margin-left: auto;
+  width: 1598px;
+}
+section.steps .sliderItem {
+  width: 320px;
+  height: 526px;
+  background-color: var(--white);
+  position: relative;
+  box-shadow: 5px 5px 20px 0px rgba(174, 174, 174, 0.3137254902);
+  padding-bottom: 40px;
+}
+section.steps .sliderItem::before {
+  content: "";
+  background: url(../images/flowArw.png) no-repeat center center/contain;
+  width: 24px;
+  height: 11px;
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+}
+section.steps .sliderItem .txt-area {
+  padding: 24px 24px 0;
+  letter-spacing: 1px;
+}
+section.steps .sliderItem .txt-area .ttl-area {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--lightPink);
+  font-weight: 600;
+  padding-bottom: 10px;
+  border-bottom: 1px dashed var(--textColor);
+}
+section.steps .sliderItem .txt-area .ttl-area p:first-child {
+  font-size: 24px;
+}
+section.steps .sliderItem .txt-area .ttl-area p:last-child {
+  font-size: 18px;
+}
+section.steps .sliderItem .txt-area .txtBase {
+  font-size: 15px;
+  padding-top: 15px;
+  line-height: 1.8;
+}
+section.steps .sliderItem .txt-area .txtBase p:not(:last-child) {
+  margin-bottom: 0.8em;
+}
+
+section.fee {
+  padding: 64px 0;
+  background: url(../images/fee-bg.png) no-repeat bottom center/cover;
+}
+section.fee .content-wrap {
+  max-width: 352px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+section.fee h2 {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+section.fee .headingTxt {
+  text-align: center;
+  margin-bottom: 20px;
+  letter-spacing: normal;
+}
+section.fee .headingTxt p:first-child {
+  margin-bottom: 0.5em;
+}
+section.fee .fee-table {
+  border: 2px solid var(--textColor);
+  margin-bottom: 20px;
+  width: 100%;
+}
+section.fee .fee-table td {
+  background-color: #FFF5F8;
+  padding: 10px 5px;
+  border-bottom: 1px dashed var(--textColor);
+  letter-spacing: normal;
+  text-align: right;
+  align-content: center;
+  width: 116px;
+}
+section.fee .fee-table .header-td {
+  background-color: #414245;
+  font-size: 18px;
+  color: var(--white);
+  padding: 5px 0 8px;
+  text-align: center;
+  border-bottom: none;
+}
+section.fee .fee-table .header-td .textYellow {
+  font-size: 21px;
+}
+section.fee .fee-table .menu-td {
+  border-right: 2px solid var(--textColor);
+  text-align: left;
+  width: calc(100% - 116px);
+}
+
+section.faq {
+  padding: 64px 0 150px;
+}
+section.faq .content-wrap {
+  max-width: 352px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+section.faq h2 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+section.faq h2 span {
+  padding: 0 40px;
+  position: relative;
+}
+section.faq h2 span::before {
+  content: "";
+  background: url(../images/star_black.png) no-repeat center center/contain;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+}
+section.faq h2 span::after {
+  content: "";
+  background: url(../images/star_black.png) no-repeat center center/contain;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+section.faq .faqBlock {
+  border: 2px solid #FFE9F0;
+}
+section.faq .faqBlock dl {
+  margin-bottom: 24px;
+}
+section.faq .faqBlock dl dt, section.faq .faqBlock dl dd {
+  position: relative;
+  padding: 18px 14px;
+  letter-spacing: normal;
+  line-height: 1.5;
+}
+section.faq .faqBlock dl dt p, section.faq .faqBlock dl dd p {
+  padding-left: 40px;
+}
+section.faq .faqBlock dl dt::before, section.faq .faqBlock dl dd::before {
+  content: "";
+  width: 30px;
+  height: 30px;
+  top: 18px;
+  left: 14px;
+  position: absolute;
+}
+section.faq .faqBlock dl dt {
+  background-color: var(--lightPink);
+  color: var(--white);
+  font-size: 17px;
+  border-bottom: 2px solid #FFE9F0;
+}
+section.faq .faqBlock dl dt::before {
+  background: url(../images/q-icon.png) no-repeat center center/contain;
+}
+section.faq .faqBlock dl dd {
+  background: var(--white);
+}
+section.faq .faqBlock dl dd::before {
+  background: url(../images/a-icon.png) no-repeat center center/contain;
+}
+section.faq .faqBlock dl dd p:not(:last-child) {
+  margin-bottom: 0.5em;
+}
+
+.c-ctaArea.bg-grad {
+  background: url(../images/grad-bg.png) no-repeat bottom center/cover;
+}
+
+footer {
+  background: linear-gradient(to left, #9FA3AA 0%, #72757C 100%);
+  padding: 50px 0 158px;
+}
+footer .content-wrap {
+  max-width: 364px;
+  padding: 0 24px;
+  margin: 0 auto;
+}
+footer nav ul {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+footer nav ul li {
+  padding: 0 15px;
+  border-right: 1px solid var(--white);
+}
+footer nav ul li:last-child {
+  border-right: none;
+}
+footer nav ul li a {
+  color: var(--white);
+  letter-spacing: normal;
+  font-size: 15px;
+}
+footer nav ul:last-child {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+footer small {
+  font-size: 13px;
+  color: var(--white);
+  text-align: center;
+  font-family: "Noto Sans JP", serif;
 }
 
 @media (max-width: 768px) {
