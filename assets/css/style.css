@@ -14,10 +14,11 @@ html {
 body {
   font-family: "Zen Old Mincho", serif;
   color: var(--textColor);
-  letter-spacing: 0.2em;
+  letter-spacing: normal;
   font-size: 16px;
   line-height: 1.3;
   background: url(../images/bgGray-noise.png) no-repeat center center/cover;
+  overflow-x: hidden;
 }
 
 img {
@@ -26,6 +27,13 @@ img {
 
 .sp-only {
   display: none;
+}
+
+.h-filter {
+  transition: 0.3s all;
+}
+.h-filter:hover {
+  filter: opacity(0.5);
 }
 
 .textYellow {
@@ -53,7 +61,62 @@ h2 {
   font-size: 22px;
   text-align: center;
   font-weight: normal;
-  line-height: 1.5;
+  letter-spacing: 0.1em;
+}
+
+.ctaBtn {
+  position: fixed;
+  z-index: 999;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  width: 400px;
+  height: 80px;
+}
+.ctaBtn a {
+  display: block;
+}
+.ctaBtn .campaignBnr {
+  background-color: var(--yellow);
+  position: relative;
+  width: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ctaBtn .campaignBnr .siteName {
+  text-align: center;
+  position: absolute;
+  top: -7px;
+  left: 0;
+  right: 0;
+}
+.ctaBtn .campaignBnr .bnrTxt {
+  color: var(--pink);
+  letter-spacing: normal;
+  font-weight: 600;
+  margin-left: 40px;
+}
+.ctaBtn .campaignBnr::before {
+  content: "";
+  background: url(../images/cta-hand.png) no-repeat center center/contain;
+  width: 56px;
+  height: 112px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.ctaBtn .campaignBnr::after {
+  content: "";
+  background: url(../images/cta-arw.png) no-repeat center center/contain;
+  width: 26px;
+  height: 26px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.ctaBtn .webBtn, .ctaBtn .telBtn {
+  width: 80px;
 }
 
 .fv-wrap {
@@ -88,7 +151,7 @@ h2 {
 }
 .fv .catchArea {
   position: absolute;
-  top: 20px;
+  top: 9px;
   left: 100px;
 }
 .fv .catchArea .dental-name {
@@ -97,7 +160,6 @@ h2 {
 }
 .fv .catchArea .dental-name p {
   font-size: 40px;
-  margin-bottom: 5px;
 }
 .fv .catchArea .dental-name span {
   letter-spacing: normal;
@@ -107,13 +169,14 @@ h2 {
   background-color: var(--textColor);
   color: var(--white);
   font-size: 22px;
-  padding: 5px 10px 8px;
+  padding: 3px 10px;
   display: inline-block;
   margin-bottom: 8px;
 }
 .fv .catchArea .catchCopy p {
   position: relative;
   padding-left: 25px;
+  letter-spacing: normal;
 }
 .fv .catchArea .catchCopy p::before {
   content: "";
@@ -167,6 +230,7 @@ h2 {
   letter-spacing: 0;
   position: relative;
   margin-bottom: 15px;
+  line-height: 1em;
 }
 .fv .pageTtlArea h1::before {
   content: "";
@@ -185,8 +249,43 @@ h2 {
   display: inline-block;
 }
 
+@media (max-width: 768px) {
+  .fv {
+    overflow-x: hidden;
+  }
+  .fv .catchArea {
+    left: 0;
+  }
+  .fv .siteLogo {
+    left: auto;
+    right: 24px;
+  }
+  .fv .pageTtlArea {
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+  .fv .mainVisual img {
+    left: 0;
+    -o-object-position: 20px;
+       object-position: 20px;
+  }
+}
+@media (max-width: 400px) {
+  .ctaBtn {
+    width: 100%;
+  }
+  .ctaBtn .campaignBnr {
+    width: calc(100% - 160px);
+  }
+  .ctaBtn .campaignBnr .bnrTxt {
+    position: relative;
+    z-index: 2;
+  }
+}
 section.feature {
   background: url(../images/feature-pcBg.png) no-repeat center center/cover;
+  letter-spacing: normal;
 }
 section.feature .bgInner {
   max-width: 760px;
@@ -207,7 +306,7 @@ section.feature h2 {
 section.feature h2 .bgWhite {
   background-color: var(--white);
   color: var(--pink);
-  padding: 5px 10px 10px;
+  padding: 3px 10px 5px;
   font-weight: 600;
 }
 section.feature .txtBase {
@@ -239,27 +338,38 @@ section.feature .featureItem-wrap .featureItem p {
   font-weight: 500;
 }
 
+.c-ctaArea {
+  position: relative;
+  height: 1280px;
+}
 .c-ctaArea.bg-white {
   background: #F8F8F9;
 }
-.c-ctaArea .content-wrap {
-  position: relative;
+.c-ctaArea .content-inner {
   max-width: 744px;
   margin: 0 auto;
-  padding-top: 600px;
-}
-.c-ctaArea .content-wrap::before {
-  content: "";
-  background: url(../images/redLip01.png) no-repeat center center/contain;
-  width: 614px;
-  height: 263px;
   position: absolute;
-  top: -4%;
+  left: 0;
   right: 0;
+  margin: auto;
+  top: -10%;
+}
+.c-ctaArea .headingTxt {
+  position: absolute;
+  top: 0;
+  right: 165px;
+  z-index: 5;
+}
+.c-ctaArea .content-wrap {
+  position: relative;
+  background: url(../images/redLip01.png) no-repeat;
+  background-size: 614px 263px;
+  background-position: 90% 0;
+  padding-top: 600px;
 }
 .c-ctaArea .content-wrap .mainVisual {
   position: absolute;
-  top: 20px;
+  top: 60px;
   left: 0;
 }
 .c-ctaArea .content-wrap .mainVisual img {
@@ -269,12 +379,6 @@ section.feature .featureItem-wrap .featureItem p {
      object-position: right center;
   -o-object-fit: cover;
      object-fit: cover;
-}
-.c-ctaArea .content-wrap .headingTxt {
-  position: absolute;
-  top: -30px;
-  right: 165px;
-  z-index: 5;
 }
 
 .cta-mainContent {
@@ -363,6 +467,7 @@ section.feature .featureItem-wrap .featureItem p {
   font-size: 22px;
   position: relative;
   margin-bottom: 15px;
+  letter-spacing: 0.2em;
 }
 .cta-btn .webBtn::before {
   content: "";
@@ -417,6 +522,7 @@ section.feature .featureItem-wrap .featureItem p {
   padding-left: 25px;
   position: relative;
   letter-spacing: 2px;
+  margin-bottom: 0px;
 }
 .cta-btn .telBtn-wrap .telBtn p:first-child::before {
   content: "";
@@ -433,6 +539,29 @@ section.feature .featureItem-wrap .featureItem p {
   letter-spacing: 0;
 }
 
+@media (max-width: 768px) {
+  .c-ctaArea {
+    height: 1300px;
+  }
+  .c-ctaArea .content-inner {
+    overflow-x: hidden;
+  }
+  .c-ctaArea .content-wrap {
+    padding-top: 500px;
+    background-position: center top;
+  }
+  .c-ctaArea .content-wrap .mainVisual {
+    top: 80px;
+    left: auto;
+    right: 30px;
+  }
+  .c-ctaArea .headingTxt {
+    right: 0;
+  }
+  .cta-mainContent {
+    transform: none;
+  }
+}
 section.trouble {
   height: 459px;
   background: url(../images/trouble-bg.png) no-repeat top center/cover;
@@ -484,6 +613,7 @@ section.trouble ul li .textYellow {
 
 section.merit {
   padding: 64px 0;
+  overflow-x: hidden;
 }
 section.merit h2 {
   font-size: 32px;
@@ -594,7 +724,7 @@ section.merit .headingTxt-area {
 }
 .meritItem-wrap .meritContainer-1 .meritItem .txtBox-wrap .txtBox .deatil {
   font-family: "Noto Sans JP", serif;
-  line-height: 2;
+  line-height: 1.8;
 }
 .meritItem-wrap .meritContainer-2 {
   background: url(../images/about-woman.png) no-repeat;
@@ -628,6 +758,29 @@ section.merit .headingTxt-area {
   margin: 20px 0;
 }
 
+@media (max-width: 580px) {
+  .meritItem-wrap .meritContainer-1 .meritItem {
+    width: 100%;
+  }
+  .meritItem-wrap .meritContainer-1 .meritItem:nth-of-type(1), .meritItem-wrap .meritContainer-1 .meritItem:nth-of-type(3) {
+    background-position: right -20% top 0%;
+  }
+  .meritItem-wrap .meritContainer-1 .meritItem:nth-of-type(1) .txtBox-wrap, .meritItem-wrap .meritContainer-1 .meritItem:nth-of-type(3) .txtBox-wrap {
+    bottom: 0;
+    right: 0;
+  }
+  .meritItem-wrap .meritContainer-1 .meritItem:nth-of-type(2) {
+    background-position: left -20% top 0%;
+  }
+  .meritItem-wrap .meritContainer-1 .meritItem .txtBox-wrap {
+    width: 90%;
+  }
+  .meritItem-wrap .meritContainer-1 .meritItem .txtBox-wrap .txtBox {
+    width: 100%;
+    position: relative;
+    box-sizing: border-box;
+  }
+}
 section.case {
   padding: 64px 0;
   background: url(../images/caseBg.png) no-repeat center center/cover;
@@ -809,7 +962,7 @@ section.artist h2 {
 }
 .artistBlock .artistItem .txt-area .license {
   background-image: linear-gradient(to right, #9FA3AA 0%, #72757C 100%);
-  padding: 10px;
+  padding: 5px 10px;
   margin-bottom: 5px;
   color: var(--white);
   font-size: 14px;
@@ -876,7 +1029,7 @@ section.about h3 .bg-pinkTxt {
   margin: 5px;
 }
 section.about .txtBase {
-  line-height: 1.3;
+  line-height: 1.8;
 }
 section.about .content-wrap {
   max-width: 368px;
@@ -1023,7 +1176,7 @@ section.about .content01-wrap .pointBlock .detail::before {
 }
 section.about .content01-wrap .pointBlock .detail .inner {
   border: 2px solid var(--white);
-  padding: 17px 30px;
+  padding: 17px;
 }
 section.about .content02-wrap {
   background-color: var(--white);
@@ -1051,8 +1204,8 @@ section.about .content02-wrap .ttl-wrap::before {
   background: url(../images/02.svg) no-repeat center center/contain;
   width: 158px;
   height: 110px;
-  top: -27px;
-  left: -85px;
+  top: -20px;
+  left: -50px;
   position: absolute;
 }
 section.about .content02-wrap h3 {
@@ -1115,10 +1268,10 @@ section.about .content02-wrap .artistBlock .mainTxt p span {
 }
 section.about .content02-wrap .artistBlock .txtBase {
   max-width: 352px;
-  margin: 30px 0;
+  margin: 30px 0 50px;
 }
 section.about .content02-wrap .artistBlock .txtBase p {
-  margin-bottom: 1em;
+  margin-bottom: 0.5em;
   line-height: 1.8;
   letter-spacing: normal;
 }
@@ -1155,7 +1308,7 @@ section.about .content02-wrap .artistBlock .pointBlock .pointItem:nth-of-type(3)
 
 .compareTable-wrap {
   background-color: var(--white);
-  margin-top: 60px;
+  margin-top: 100px;
   position: relative;
   padding: 0 16px 22px;
   box-shadow: 5px 5px 20px 0 rgba(122, 134, 158, 0.2549019608);
@@ -1165,7 +1318,7 @@ section.about .content02-wrap .artistBlock .pointBlock .pointItem:nth-of-type(3)
   background: url(../images/tableDeco.png) no-repeat center center/contain;
   width: 100%;
   height: 48px;
-  top: -48px;
+  top: -45px;
   left: 0;
   position: absolute;
 }
@@ -1296,6 +1449,20 @@ section.about .content02-wrap .artistBlock .pointBlock .pointItem:nth-of-type(3)
   letter-spacing: normal;
 }
 
+@media (max-width: 768px) {
+  section.about .ttlArea::before {
+    background: url(../images/pen_sp.png) no-repeat center center/contain;
+    right: 0;
+    width: 175px;
+    height: 139px;
+  }
+  section.about .content02-wrap .artistBlock .txtBase {
+    margin: 30px 24px;
+  }
+  section.about .content02-wrap .pointBlock {
+    margin-left: 24px;
+  }
+}
 section.design {
   padding: 64px 0;
   background: url(../images/design-bg.png) no-repeat bottom center/cover;
@@ -1339,6 +1506,9 @@ section.design .designBlock .designItem:nth-of-type(2)::before {
   right: 0;
   margin: auto;
 }
+section.design .designBlock .designItem:nth-of-type(3) {
+  margin-bottom: 0px;
+}
 section.design .designBlock .designItem:nth-of-type(3)::before {
   content: "";
   background: url(../images/designNum03.png) no-repeat center center/contain;
@@ -1362,13 +1532,15 @@ section.design .designBlock .designItem .designName {
   color: var(--white);
   font-size: 28px;
   background-color: var(--textColor);
-  padding: 10px 30px 10px 10px;
+  padding: 5px 30px 5px 10px;
   display: inline-block;
 }
 section.design .designBlock .designItem .detail-area {
-  margin-top: 30px;
+  margin-top: 40px;
   padding: 0 20px 0 16px;
-  line-height: 1.5;
+}
+section.design .designBlock .designItem .detail-area p {
+  line-height: 1.8;
 }
 section.design .designBlock .designItem .detail-area table {
   border: 2px solid var(--textColor);
@@ -1381,6 +1553,7 @@ section.design .designBlock .designItem .detail-area table tr:not(:last-child) {
 section.design .designBlock .designItem .detail-area table th, section.design .designBlock .designItem .detail-area table td {
   padding: 10px;
   font-weight: 600;
+  letter-spacing: normal;
 }
 section.design .designBlock .designItem .detail-area table th {
   width: 98px;
@@ -1484,9 +1657,15 @@ section.downtime .downtimeBlock .downtimeItem .txtArea .detail {
   font-size: 14px;
 }
 
+@media (max-width: 768px) {
+  section.downtime .content-wrap {
+    max-width: auto;
+  }
+}
 section.steps {
-  padding: 64px 0;
+  padding: 64px 0 100px;
   background-color: var(--white);
+  overflow-x: hidden;
 }
 section.steps h2 {
   font-size: 32px;
@@ -1496,15 +1675,72 @@ section.steps h2 {
 section.steps h2 span {
   font-size: 38px;
 }
-section.steps .sliderItem-wrap {
-  display: flex;
-  gap: 16px;
+section.steps .slider-container {
   margin-left: auto;
+  transform: translateX(20vw);
   width: 1598px;
+}
+section.steps .slider-container .slick-slider {
+  margin: 0;
+}
+section.steps .slider-container .slick-list {
+  padding: 0;
+}
+section.steps .slider-container .slick-track {
+  display: flex;
+}
+section.steps .slider-container .slick-slide {
+  height: auto !important;
+  margin: 0 16px 20px;
+}
+section.steps .slider-container .slick-prev, section.steps .slider-container .slick-next {
+  background: none !important;
+  width: 40px;
+  height: 40px;
+  border-radius: 0;
+  color: transparent;
+  z-index: 1;
+}
+section.steps .slider-container .slick-prev {
+  left: 0;
+}
+section.steps .slider-container .slick-prev:before {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 40px;
+  background: url("../images/preArw.png") no-repeat center center/contain;
+}
+section.steps .slider-container .slick-next {
+  left: 500px;
+}
+section.steps .slider-container .slick-next:before {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 40px;
+  background: url("../images/nextArw.png") no-repeat center center/contain;
+}
+section.steps .slider-container .slick-dots {
+  text-align: left;
+  bottom: -20px;
+  margin-left: 100px;
+}
+section.steps .slider-container .slick-dots li {
+  margin: 0 0;
+}
+section.steps .slider-container .slick-dots li button:before {
+  font-size: 20px;
+  color: #ccc;
+}
+section.steps .slider-container .slick-dots li.slick-active button:before {
+  color: #EF6E84;
+}
+section.steps .sliderItem-wrap {
+  display: block !important;
 }
 section.steps .sliderItem {
   width: 320px;
-  height: 526px;
   background-color: var(--white);
   position: relative;
   box-shadow: 5px 5px 20px 0px rgba(174, 174, 174, 0.3137254902);
@@ -1547,6 +1783,23 @@ section.steps .sliderItem .txt-area .txtBase p:not(:last-child) {
   margin-bottom: 0.8em;
 }
 
+@media (max-width: 768px) {
+  section.steps .slider-container {
+    transform: translateX(0px);
+    width: auto;
+  }
+  section.steps .slider-container .slick-next {
+    left: auto;
+    right: 10px;
+  }
+  section.steps .slider-container .slick-prev {
+    left: 10px;
+  }
+  section.steps .slider-container .slick-dots {
+    margin-left: 0px;
+    text-align: center;
+  }
+}
 section.fee {
   padding: 64px 0;
   background: url(../images/fee-bg.png) no-repeat bottom center/cover;
@@ -1683,6 +1936,21 @@ section.faq .faqBlock dl dd p:not(:last-child) {
 
 .c-ctaArea.bg-grad {
   background: url(../images/grad-bg.png) no-repeat bottom center/cover;
+}
+.c-ctaArea.bg-grad .cta-btn .ttl {
+  color: var(--white);
+}
+.c-ctaArea.bg-grad .cta-btn .ttl::before {
+  background: url(../images/star_white.png) no-repeat center center/contain;
+}
+.c-ctaArea.bg-grad .cta-btn .ttl::after {
+  background: url(../images/star_white.png) no-repeat center center/contain;
+}
+.c-ctaArea.bg-grad .cta-btn .telBtn-wrap p:first-child {
+  color: var(--white);
+}
+.c-ctaArea.bg-grad .cta-btn .telBtn-wrap .telBtn p {
+  color: var(--textColor);
 }
 
 footer {
