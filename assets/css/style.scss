@@ -1592,44 +1592,35 @@ section.about{
         }
 
         th{
-            width: 28px;
+            width: 1em;
             font-family: "Noto Sans JP", serif;
             color: var(--white);
             font-size: 15px;
             font-weight: bold;
             font-weight: 500;
             background-color: #83838C;
-            padding: 0 5px;
+            padding: 20px 5px;
             letter-spacing: 0;
+            line-height: 1.2;
             /* 基本的な縦書き設定 */
-            writing-mode: vertical-rl;
-            -webkit-writing-mode: vertical-rl;
-            -ms-writing-mode: tb-rl;
+            // writing-mode: vertical-rl;
+            // -webkit-writing-mode: vertical-rl;
+            // -ms-writing-mode: tb-rl;
             
             /* 文字の向きを正立に */
-            text-orientation: upright;
-            -webkit-text-orientation: upright;
+            // text-orientation: upright;
+            // -webkit-text-orientation: upright;
 
             /* スマホでの表示改善 */
-            word-break: keep-all;
-            overflow-wrap: normal;
-            white-space: nowrap;
+            // word-break: keep-all;
+            // overflow-wrap: normal;
+            // white-space: nowrap;
 
             /* テキストの配置 */
             text-align: center;
             vertical-align: middle;
         }
 
-        @supports not (writing-mode: vertical-rl) {
-            th {
-                -webkit-transform: rotate(-90deg);
-                -moz-transform: rotate(-90deg);
-                -ms-transform: rotate(-90deg);
-                transform: rotate(-90deg);
-                transform-origin: center center;
-                white-space: nowrap;
-            }
-        }
 
         td.detail-after{
             border-right: 2px solid #FFE9F0;
