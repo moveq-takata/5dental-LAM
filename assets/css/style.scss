@@ -1597,13 +1597,13 @@ section.about{
             color: var(--white);
             font-size: 15px;
             font-weight: bold;
-            writing-mode: vertical-rl;
-            text-orientation: upright;
-            letter-spacing: normal;
             font-weight: 500;
             background-color: #83838C;
             padding: 0 5px;
             -webkit-writing-mode: vertical-rl;
+            writing-mode: vertical-rl;
+            text-orientation: upright;
+            letter-spacing: normal;
             -ms-writing-mode: tb-rl;
         }
         td.detail-after{
