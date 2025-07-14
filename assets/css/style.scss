@@ -1203,7 +1203,6 @@ section.about{
     }
 
 
-
     .content01-wrap{
         max-width: 760px;
         margin: 0 auto;
@@ -1599,12 +1598,13 @@ section.about{
             font-size: 15px;
             font-weight: bold;
             writing-mode: vertical-rl;
-            text-orientation: mixed;
+            text-orientation: upright;
             letter-spacing: normal;
             font-weight: 500;
             background-color: #83838C;
             padding: 0 5px;
-
+            -webkit-writing-mode: vertical-rl;
+            -ms-writing-mode: tb-rl;
         }
         td.detail-after{
             border-right: 2px solid #FFE9F0;
