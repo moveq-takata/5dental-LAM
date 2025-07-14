@@ -1617,7 +1617,7 @@ section.about{
 
             /* テキストの配置 */
             text-align: center;
-            // vertical-align: middle;
+            vertical-align: middle;
         }
 
         @supports not (writing-mode: vertical-rl) {
