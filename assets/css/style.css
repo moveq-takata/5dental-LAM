@@ -1,3 +1,4 @@
+@charset "UTF-8";
 :root {
   --textColor:#414245;
   --pink:#F33E5C;
@@ -1363,10 +1364,27 @@ section.about .content02-wrap .artistBlock .pointBlock .pointItem:nth-of-type(3)
   font-weight: 500;
   background-color: #83838C;
   padding: 0 5px;
+  letter-spacing: 0;
+  /* 基本的な縦書き設定 */
   writing-mode: vertical-rl;
-  text-orientation: upright;
-  letter-spacing: normal;
+  -webkit-writing-mode: vertical-rl;
   -ms-writing-mode: tb-rl;
+  /* 文字の向きを正立に */
+  text-orientation: upright;
+  -webkit-text-orientation: upright;
+  /* スマホでの表示改善 */
+  word-break: keep-all;
+  overflow-wrap: normal;
+  white-space: nowrap;
+  /* テキストの配置 */
+  text-align: center;
+}
+@supports not (writing-mode: vertical-rl) {
+  .compareTable-wrap table th {
+    transform: rotate(-90deg);
+    transform-origin: center center;
+    white-space: nowrap;
+  }
 }
 .compareTable-wrap table td.detail-after {
   border-right: 2px solid #FFE9F0;
